@@ -58,6 +58,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
+    
 </head>
 <body>
 
@@ -83,9 +84,7 @@ In conclusion, while I still do not know what career path I plan to take, I am t
 
     <div id="projects" class="page">
         <h1>Projects.exe</h1>
-        <div class="project-card">
-            <p></p>
-        </div>
+    
         <div class="project-card">
             <p>Video showcasing projects:</p>
     <!-- New video card -->
@@ -102,8 +101,30 @@ In conclusion, while I still do not know what career path I plan to take, I am t
 
         <p class="video-caption">Tip: click the controls to pause or view full screen.</p>
     </div>
+    <style>
+        /* This targets the container holding the video */
+        .video-wrapper {
+            width: 100%;       /* The wrapper takes up the full width available */
+            max-width: 800px;  /* But don't let it get wider than 800px */
+        }
 
-    
+        /* This targets the video itself inside the wrapper */
+        .video-wrapper video {
+            width: 100%;       /* Force video to match the wrapper's width */
+            height: auto;      /* Calculate height automatically so it's not squished */
+            display: block;    /* Removes invisible space below the video */
+        }
+    </style>
+    <div id="projects" class="page">
+        <h1>Projects.exe</h1>
+        <div class="video-wrapper">
+                 <video controls playsinline>
+                     <source src="https://raw.githubusercontent.com/EvaZhu0/Online-Portfolio/main/Welcome%20to.mp4">
+                 </video>
+            </div>
+        </div>
+
+    </div>
 </div>
     <div id="resume" class="page">
         <h1>Resume_v1</h1>
