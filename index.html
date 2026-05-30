@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eva Online Portfolio </title>
+    <title>Eva Online Portfolio</title>
     <style>
-        /* CSS: This handles the "Aesthetic" and Pink Theme */
+        /* CSS: Handles the Aesthetic, High-Contrast Pink/Dark Theme */
         body {
-            font-family: 'Courier New', Courier, monospace; /* Coding vibe */
-            background-color: #0f0f0f; /* Dark background */
-            color: #ffb6c1; /* Light Pink text */
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #0f0f0f;
+            color: #ffb6c1;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -20,6 +20,9 @@
             margin-top: 20px;
             border-bottom: 2px solid #ffb6c1;
             padding-bottom: 10px;
+            width: 100%;
+            text-align: center;
+            max-width: 700px;
         }
 
         button {
@@ -30,6 +33,8 @@
             margin: 5px;
             cursor: pointer;
             transition: 0.3s;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
         }
 
         button:hover {
@@ -38,27 +43,142 @@
         }
 
         .page {
-            display: none; /* Hide all pages by default */
-            max-width: 600px;
-            padding: 40px;
-            text-align: center;
-            animation: fadeIn 0.5s;
+            display: none; /* Hidden by default */
+            width: 100%;
+            max-width: 700px;
+            padding: 40px 20px;
+            box-sizing: border-box;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
-        /* The "Active" class makes a page visible */
         .active {
-            display: block;
+            display: block; /* Shows current page */
         }
 
-        h1 { text-transform: uppercase; letter-spacing: 5px; }
-        .project-card { border: 1px dashed #ffb6c1; padding: 10px; margin: 10px 0; }
+        h1 { 
+            text-transform: uppercase; 
+            letter-spacing: 5px; 
+            text-align: center;
+            margin-bottom: 30px;
+        }
         
+        h3 { 
+            border-bottom: 1px dashed #ffb6c1; 
+            padding-bottom: 5px; 
+            margin-top: 30px; 
+            text-align: left; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        p { text-align: left; line-height: 1.6; }
+        ul { text-align: left; padding-left: 20px; line-height: 1.6; }
+        li { margin-bottom: 5px; }
+        
+        /* Grid Layout for Projects */
+        .project-card { 
+            border: 1px dashed #ffb6c1; 
+            padding: 25px; 
+            margin: 20px 0; 
+            box-sizing: border-box;
+        }
+
+        .project-img-container {
+            width: 100%;
+            border: 1px solid #ffb6c1;
+            margin: 15px 0;
+            background-color: #1a1a1a;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .project-img-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .project-links {
+            margin-top: 20px;
+            text-align: left;
+            border-top: 1px dotted #ffb6c1;
+            padding-top: 15px;
+        }
+
+        .project-links a {
+            color: #ffb6c1;
+            text-decoration: underline;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .project-links a:hover {
+            color: #fff;
+        }
+        
+        /* Video Player Layout */
+        .video-wrapper {
+            width: 100%;       
+            margin: 15px 0;
+        }
+
+        .video-wrapper video {
+            width: 100%;       
+            height: auto;      
+            display: block;    
+            border: 1px solid #ffb6c1;
+        }
+
+        .video-caption {
+            text-align: center;
+            font-size: 0.9em;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* Resume-specific Table Formatting (Meets Layout Rubric) */
+        .resume-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .resume-header p {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .resume-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .resume-table td {
+            padding: 6px 0;
+            vertical-align: top;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ffb6c1;
+        }
+
+        .resume-table .left-col {
+            width: 75%;
+            font-weight: bold;
+        }
+
+        .resume-table .right-col {
+            width: 25%;
+            text-align: right;
+            white-space: nowrap;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
-    
 </head>
 <body>
 
@@ -70,89 +190,163 @@
     </nav>
 
     <div id="about" class="page active">
-        <h1> Eva Zhuo</h1>
-        <p>Hi, my name is Eva and I am a student at Emerald High School. My personal career goals are to be successful and be financially stable. Right now, I am not sure what I want to study in the future. I am currently trying to discover what I have a passion for that would work as a possible job. Some fields I am interested in are computer science, business, and economics. I chose these fields because I have always been very interested in computers and starting a business. I know that whatever career I choose will require hard work, dedication, and motivation, but I am confident I will succeed. Even though I am still unsure about my exact career path, my plan is to explore different classes and opportunities that will help me figure out what I actually enjoy. 
+        <h1>Eva Zhuo</h1>
+        <p>Hi, my name is Eva and I am a student at Emerald High School. My personal career goals are to be highly successful and financially stable. Right now, I am exploring paths to discover a true passion that can transition into a fulfilling career. Some fields I am strongly interested in include computer science, business, and economics. I chose these fields because I have always been fascinated by computer technology and the mechanics of launching a business. I know that whichever path I choose will require hard work, dedication, and deep motivation, and I am confident I will succeed. My plan is to continue exploring diverse classes and unique opportunities to pinpoint exactly what I enjoy doing.</p> 
 
-Some of my skills are creativity, problem solving, and working well under pressure. During group projects, I demonstrate creativity by coming up with ideas and problem solving solutions that come up with the project. Some characteristics I have that relate to some of the fields I want to pursue are being artistic, persistent, and dependable. To start a business, you need to be persistent and keep trying because a large amount of businesses go bankrupt in the first year. You need to be artistic and dependable if you have a career in computer science in order to solve problems about a program with your colleagues and brainstorm ways of fixing them. 
+        <p>Some of my core skills include creativity, problem-solving, and performing well under pressure. During group collaborations, I demonstrate creativity by contributing fresh ideas and constructing reliable solutions to problems that arise. Additionally, I am artistic, persistent, and dependable—traits that directly relate to my intended career fields. In entrepreneurship, persistence is vital to overcome the strict challenges new businesses face. Similarly, in computer science, being creative and dependable allows you to seamlessly collaborate with colleagues to troubleshoot software issues and brainstorm architectural fixes.</p> 
 
-Some of my major achievements I have accomplished in high school are getting on to the cheer team and taking two courses over the summer. I do not have many so far but I hope to expand my list of accomplishments. Through joining cheer, I have learned a lot about teamwork, commitment, and discipline. I have gotten better at working with others from showing up at practice on time and learned to trust and rely on my teammates during stunts. Before cheer, I never did any sport so it took a lot of commitment and discipline to practice at home, work out, and show up to every practice. By taking two courses over the summer, I have proven how committed and dedicated I can be. Through taking those courses, I have learned essential time management skills and how to teach concepts to myself. 
+        <p>Some of my major achievements in high school so far include earning a spot on the cheer team and successfully completing two academic courses over the summer. Through cheerleading, I have gained valuable insights into teamwork, commitment, and discipline. I have strengthened my collaborative skills by prioritizing punctuality and learning to rely completely on my teammates during stunts. Because cheer was my very first sport, it demanded significant self-discipline to train at home, build athletic conditioning, and remain dedicated to our schedule. Taking summer courses further proves my academic drive, teaching me crucial time-management habits and the ability to independently master complex concepts.</p> 
 
-In conclusion, while I still do not know what career path I plan to take, I am trying to discover my passion by exploring different classes and opportunities. I am great at working well, problem solving, and coming up with creative ideas which will benefit my future career. Through high school, I have learned a lot through taking courses over the summer and getting on to the cheer team. I hope to expand my knowledge and achievements in the future. 
-</p>
-        <p></p>
+        <p>In conclusion, while my final career destination remains open, I am proactively discovering my passion by pursuing challenging coursework and extra opportunities. My collaborative skills, creative outlook, and problem-solving mindset will serve as strong foundations for my future. I look forward to expanding my knowledge base, adding to my achievements, and growing throughout high school.</p>
     </div>
 
     <div id="projects" class="page">
         <h1>Projects.exe</h1>
-    
+        
         <div class="project-card">
-            <p>Video showcasing projects:</p>
-    <!-- New video card -->
-    <div class="project-card project-video">
-        <h3></h3>
-        <p></p>
-
-        <div class="video-wrapper" aria-hidden="false">
-            <video controls playsinline aria-label="Portfolio walkthrough video" poster="assets/video-poster.jpg">
-                <source src="https://raw.githubusercontent.com/EvaZhu0/Online-Portfolio/main/Welcome%20to.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <p style="text-align: center; font-weight: bold; margin-top: 0;">Portfolio Video Walkthrough</p>
+            <div class="video-wrapper">
+                <video controls playsinline>
+                    <source src="https://raw.githubusercontent.com/EvaZhu0/Online-Portfolio/main/Welcome%20to.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-caption">Tip: Click the media controls to play, pause, or enter full screen.</p>
         </div>
 
-        <p class="video-caption">Tip: click the controls to pause or view full screen.</p>
-    </div>
-    <style>
-        /* This targets the container holding the video */
-        .video-wrapper {
-            width: 100%;       /* The wrapper takes up the full width available */
-            max-width: 800px;  /* But don't let it get wider than 800px */
-        }
+        <div class="project-card">
+            <h2>Project 1: CSE 3.2.5 Rock Paper Scissors Algorithmic Strategy Player</h2>
+            <p><strong>Course:</strong> Computer Science Essentials (PLTW)</p>
+            <p><strong>Date Completed:</strong> Spring 2026</p>
+            
+            <div class="project-img-container">
+                <img src="executioner.png" alt="Python executioner.py code block screenshot showing pattern recognition strategy tracking">
+                <p style="font-size: 0.8em; margin: 5px 0 0 0; font-style: italic; color: #fff;">Source Code View: executioner.py script logic</p>
+            </div>
 
-        /* This targets the video itself inside the wrapper */
-        .video-wrapper video {
-            width: 100%;       /* Force video to match the wrapper's width */
-            height: auto;      /* Calculate height automatically so it's not squished */
-            display: block;    /* Removes invisible space below the video */
-        }
-    </style>
-    <div id="projects" class="page">
-        <h1>Projects.exe</h1>
-        <div class="video-wrapper">
-                 <video controls playsinline>
-                     <source src="https://raw.githubusercontent.com/EvaZhu0/Online-Portfolio/main/Welcome%20to.mp4">
-                 </video>
+            <p><strong>Official Project Objective & Goal:</strong><br>
+            The objective of this PLTW Computer Science Essentials milestone was to design, construct, and implement a custom predictive game strategy within a Python bot module to compete in an automated Rock, Paper, Scissors tournament. The primary goal was to devise an original algorithmic methodology that could evaluate live game trends, anticipate opponent choices, adapt dynamically across consecutive iterations, and systematically outperform alternative student submissions and baseline randomized strategies.</p>
+            
+            <p><strong>Technical Description & Implementation:</strong><br>
+            My program establishes a specialized pattern recognition routine titled "pattern recognition". The algorithm acts dynamically by analyzing data captured across two native arrays: `my_history` and `their_history`. To prevent initial runtime execution out-of-bounds errors, the code deploys a protective conditional threshold that evaluates if the game iteration length is under two rounds; if true, it defaults to throwing a stable "paper" move, mitigating the common human bias of throwing "rock" on opening moves. For subsequent turns, my program checks historical entries using negative index indicators. It compares the opponent's immediate last move `their_history[-1]` to their second-to-last move `their_history[-2]`. If a matched double-move pattern is identified, it maps a variable `x` to target that input and returns its explicit mathematical counter. If no repetition is verified, it isolates their secondary historical choice `their_history[-2]` to interrupt standard sequence rhythms and bypass predictable feedback loops.</p>
+            
+            <p><strong>My Responsibilities, Learnings & Skills Exemplified:</strong><br>
+            I had sole responsibility for architecting the logical layout of the `move()` utility function and implementing the structural branching logic using Python's `if`, `elif`, and `else` statements. Through this assignment, I mastered advanced list traversal methodologies, array boundary analysis, and predictive strategic modeling. This project directly exemplifies my proficiencies in Boolean conditional testing, data sequence tracking, functional abstractions, and software testing practices.</p>
+            
+            <div class="project-links">
+                <a href="https://github.com/EvaZhu0/Online-Portfolio" target="_blank">&#128196; Project Documentation</a>
+                <a href="https://github.com/EvaZhu0/Online-Portfolio" target="_blank">&#128279; GitHub Source Link</a>
             </div>
         </div>
 
+        <div class="project-card">
+            <h2>Project 2: CSE 3.1.3 Combo Menu Automated Ordering Terminal</h2>
+            <p><strong>Course:</strong> Computer Science Essentials (PLTW)</p>
+            <p><strong>Date Completed:</strong> Spring 2026</p>
+            
+            <div class="project-img-container">
+                <img src="combomenu.png" alt="Python Combo Menu source code screenshot displaying nested pricing validation criteria">
+                <p style="font-size: 0.8em; margin: 5px 0 0 0; font-style: italic; color: #fff;">Source Code View: Combo_Menuv4-2.py script structure</p>
+            </div>
+
+            <p><strong>Official Project Objective & Goal:</strong><br>
+            The objective of this PLTW Computer Science Essentials project was to program a functional, user-facing, automated restaurant combo menu ordering system. The goal was to construct an application that collects user preferences across multiple categories (including main courses, beverages, sides, and item-specific quantities), dynamically computes financial sub-totals, alters pricing structures based on item dimension flags, automatically processes bundle promotional discounts, and displays calculated itemized invoices back to the consumer.</p>
+            
+            <p><strong>Technical Description & Implementation:</strong><br>
+            The software utilizes sequential `input()` query functions to systematically walk a consumer through ordering modules for sandwiches, drinks, fries, and ketchup. It initiates a floating accumulation variable `totalcost=0` to preserve the financial state across the runtime environment. The ordering blocks feature deeply nested execution branches. For instance, selecting a sandwich processes inputs for chicken ($5.25), beef ($6.25), or tofu ($5.75), appending the values to the cost accumulator. The drink and fry modules perform sub-tier size validations (small, medium, large), with the fry section executing an auxiliary sub-query to upcharge an extra $1.00 if a "mega-size" conditional override flag returns positive. To secure the terminal from breaking during numeric entries, a native string method `.isdigit()` filters the ketchup variable before explicit type-casting converts the string into an operational mathematical integer (`int(ketchup)`), allowing calculation of incremental packet fees ($0.25 each). Finally, the app tests a multi-variable logical condition: if a sandwich, drink, and fries are all active, it registers a bundle markdown, deducts $1.00 from the total, and presents the final formatted cost.</p>
+            
+            <p><strong>My Responsibilities, Learnings & Skills Exemplified:</strong><br>
+            I handled the complete codebase composition, variable assignment structures, and nesting formatting. I resolved data type alignment challenges by ensuring user response strings were cast to lowercase (`.lower()`) to eliminate input variability, and leveraged data string formatting techniques (`str(totalcost)`) to cleanly concatenate text data blocks with arithmetic primitives during console print outputs. This project highlights my abilities in system input handling, computational algorithms, syntax nesting rules, and state management logic.</p>
+            
+            <div class="project-links">
+                <a href="https://github.com/EvaZhu0/Online-Portfolio" target="_blank">&#128196; Project Documentation</a>
+                <a href="https://github.com/EvaZhu0/Online-Portfolio" target="_blank">&#128279; GitHub Source Link</a>
+            </div>
+        </div>
     </div>
-</div>
+
     <div id="resume" class="page">
         <h1>Resume_v1</h1>
+        
+        <div class="resume-header">
+            <h2>Eva Zhuo</h2>
+            <p>3973 Campton Court, Dublin, CA 94568</p>
+            <p>(925) 956-6046 | zhuo9723@mydusd.org</p>
+        </div>
+
         <h3>Education</h3>
-        <p>B.S. in Computer Science (In Progress)</p>
+        <table class="resume-table">
+            <tr>
+                <td class="left-col">Emerald High School (Dublin, CA)</td>
+                <td class="right-col">Graduating in 2029</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding-top: 2px;">Cumulative GPA: 4.0</td>
+            </tr>
+        </table>
+        <ul>
+            <li>Principal's Honor Roll (Received 3 times)</li>
+            <li>Scholar Athlete (Received 2 times)</li>
+        </ul>
+
+        <h3>Work Experience</h3>
+        <table class="resume-table">
+            <tr>
+                <td class="left-col">Private Algebra 1 Math Tutor</td>
+                <td class="right-col">March 2026 - PRESENT</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-style: italic; color: #fff;">Private Tutoring — Dublin, CA</td>
+            </tr>
+        </table>
+        <ul>
+            <li>Helping with math homework and lessons</li>
+            <li>Teaching core mathematical concepts cleanly</li>
+        </ul>
+
+        <h3>Volunteer Experience</h3>
+        <table class="resume-table">
+            <tr>
+                <td class="left-col">English Tutor</td>
+                <td class="right-col">Jan 2025 - Apr 2025</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="font-style: italic; color: #fff;">California Junior Scholarship Federation — Dublin, CA</td>
+            </tr>
+        </table>
+        <ul>
+            <li>Revised academic essays and provided targeted feedback to students</li>
+            <li>Helped students improve structural drafting for better grade outcomes</li>
+        </ul>
+
+        <h3>Extracurricular Activities</h3>
+        <ul>
+            <li>Sideline Cheer and Competitive Cheer (2025-2026)</li>
+            <li>Act of Hearts Club (2025-2026)</li>
+            <li>California Scholarship Federation (2025-2026)</li>
+        </ul>
+
         <h3>Skills</h3>
-        <p>JavaScript, Python, HTML, CSS, Git</p>
+        <ul>
+            <li><strong>Languages:</strong> Mandarin (Proficient), Spanish (Basic)</li>
+            <li><strong>Software:</strong> Google Docs, Google Slides</li>
+        </ul>
     </div>
 
     <div id="contact" class="page">
         <h1>Ping Me</h1>
-        <p>Email: student@futurecs.edu</p>
-        <p>GitHub: @futureDev</p>
-        <p>LinkedIn: /in/futuredev</p>
+        <p><strong>Email:</strong> zhuo9723@mydusd.org</p>
+        <p><strong>Phone:</strong> (925) 956-6046</p>
+        <p><strong>GitHub:</strong> @EvaZhu0</p>
     </div>
 
     <script>
-        // JAVASCRIPT: This handles the page switching logic
+        // JAVASCRIPT: Handles smooth page switching logic
         function showPage(pageId) {
-            // 1. Find all elements with the class 'page'
             const pages = document.querySelectorAll('.page');
-            
-            // 2. Loop through them and remove the 'active' class (hides them)
             pages.forEach(page => {
                 page.classList.remove('active');
             });
-
-            // 3. Find the specific page clicked and add the 'active' class (shows it)
             document.getElementById(pageId).classList.add('active');
         }
     </script>
